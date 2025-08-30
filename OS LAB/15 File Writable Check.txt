@@ -1,0 +1,6 @@
+read -p "Enter filename:" fname
+if [ -w $fname ]; then
+  echo "Writable"
+else
+  echo "Not writable"
+fi

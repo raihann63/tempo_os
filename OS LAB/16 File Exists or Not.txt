@@ -1,0 +1,6 @@
+read -p "Enter filename:" fname
+if [ ! -f $fname ]; then
+  echo "Does not exist"
+  exit 1
+fi
+echo "File exists"

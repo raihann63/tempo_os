@@ -1,0 +1,205 @@
+Adding Two Numbers using Bash
+#!/bin/bash
+ num1=10
+ num2=20
+ sum=$(($num1+$num2))
+ echo "The Sum is: $sum"
+
+Subtracting Two Numbers using Bash Script
+#!/bin/bash
+ num1=30
+ num2=20
+ dif=$(($num1-$num2))
+ echo "The difference is: $dif"
+
+Generating a Random Number Between Two Given Numbers
+ #!/bin/bash
+ read -p "Enter minimum range:" min
+ read -p "Enter maximum range:" max
+ r_num=$(( $RANDOM % ($max-$min + 1) + $min ))
+ echo "Random Number: $r_num"
+
+Performing Multiple Mathematical Operations in a Script
+ #!/bin/bash
+ read -p "Enter a number:" num1
+ read -p "Enter a smaller number:" num2
+ echo "Addition: $(($num1 + $num2))"
+ echo "Subtraction: $(($num1-$num2))"
+ echo "Multiplication: $(($num1 * $num2))"
+ echo "Division: $(($num1 / $num2))"
+
+
+Performs a Bitwise Operation Based on User Input
+
+ #!/bin/bash
+ read -p "Enter two numbers: " num1 num2
+ read -p "Enter operation to perform (AND, OR, NOT): " op
+ case $op in
+ AND) echo "Result: $num1 & $num2 = $((num1&num2))";;
+ OR) echo "Result: $num1 | $num2 = $((num1|num2))";;
+ NOT) echo "Result: $num1 ^ $num2 = $((num1^num2))";;
+ *) echo "Invalid operator.";;
+ esac
+
+
+Check if a Number is an Even or Odd
+
+#!/bin/bash
+ read -p "Enter a number:" num
+ if [ $((num%2)) == 0 ]
+ then
+ echo "The number is even"
+ else
+ echo "The number is odd"
+ fi
+
+
+Perform an Arithmetic Operation Based on User Input
+
+ !/bin/bash
+ read -p "Enter a number:" num1
+ read -p "Enter a smaller number:" num2
+ read -p "Enter an operand:" op
+ if [ $op == + ]; then
+ echo "$num1 + $num2 = $((num1+num2))"
+ elif [ $o ==-]; then
+ echo "$num1-$num2 = $((num1-num2))"
+ elif [ $op == * ]; then
+ echo "$num1 * $num2 = $((num1*num2))"
+ elif [ $op == / ]; then
+ echo "$num1 / $num2 = $((num1/num2))"
+ else
+ echo "Operator not listed"
+ fi
+
+Performs a Logical Operation Based on User Input
+
+#!/bin/bash
+read -p "Enter two values (true/false): " val1 val2
+read -p "Enter operation (and/or/not): " op
+
+if [ "$op" == "and" ]; then
+    [[ $val1 == true && $val2 == true ]] && echo "Result: true" || echo "Result: false"
+elif [ "$op" == "or" ]; then
+    [[ $val1 == true || $val2 == true ]] && echo "Result: true" || echo "Result: false"
+elif [ "$op" == "not" ]; then
+    [[ $val1 == true ]] && echo "Result: false" || echo "Result: true"
+else
+    echo "Invalid operator."
+fi
+
+
+Check if a Given Input is a Valid Email ID
+
+#!/bin/bash
+ read-p "Enter an email ID: " id
+ if [[ $id =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
+ echo "This is a valid email ID!"
+ else
+ echo "This is not a valid email ID!"
+fi
+
+
+Check if a Given Input is a Valid URL
+
+#!/bin/bash
+ read -p "Enter a URL: " url
+ if [[ $url =~ ^(http|https)://[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
+ echo " This is a valid URL!"
+ else
+ echo "This is not a valid URL!"
+ fi
+
+Check if a Given Number is Positive or Negative
+
+read-p "Enter a number:" num
+ if [ $num-gt 0 ]; then
+ echo "The number is Positive!"
+ elif [ $num-lt 0 ]; then
+ echo "The number is Negative!"
+ else
+ echo "The number is Zero!!"
+ fi
+
+Check if a File is Writable
+
+ #!/bin/bash
+ read -p "Enter a File Name:" fname
+ if [-w $fname ]; then
+ echo "The File $fname is writable."
+ else
+ echo "The File $fname is not writable."
+ fi
+
+Check if a File Exists or Not
+
+#!/bin/bash
+ read-p "Enter a File Name:" fname
+ if [ !-f $fname ]; then
+ echo "The File $fname does not exist!"
+ exit 1
+ fi
+ echo "The File $fname exists."
+
+Check if Two Strings are Equal
+ #!/bin/bash
+ string1="hello"
+ string2="world"
+ if [ "$string1" == "$string2" ]; then
+ echo "The strings are equal."
+ else
+ echo "The strings are not equal."
+ fi
+
+Convert All Uppercase Letters in a String to Lowercase
+
+#!/bin/bash
+ read-p "Enter a string: " str
+ echo "Converted String:" $str | tr '[:upper:]' '[:lower:]'
+
+Find the Smallest and Largest Elements in an Array
+
+arr=(24 27 67 11 32)
+sorted=($(printf "%s\n" "${arr[@]}" | sort -n))
+
+echo "Smallest: ${sorted[0]}"
+echo "Largest: ${sorted[-1]}"
+
+
+Sort an Array of Integers in Ascending Order
+
+arr=(24 23 19 08 34 67)
+sorted_assend=($(printf "%s\n" "${arr[@]}" | sort -n))
+sorted_descend=($(printf "%s\n" "${arr[@]}" | sort -nr))
+echo "Ascending arr: ${sorted_assend[@]}"
+echo "Descending arr: ${sorted_descend[@]}"
+
+Check if a String is a Palindrome
+
+read -p "Enter a string: " str
+
+if [ "$str" == "$(echo $str | rev)" ]; then
+    echo "The string is a Palindrome"
+else
+    echo "The string is not a Palindrome"
+fi
+
+Check if a Number is Prime
+
+read -p "Enter number:" num
+[ $num -le 1 ] && echo "Not prime" && exit
+for ((i=2; i*i<=num; i++)); do
+    [ $((num%i)) -eq 0 ] && echo "Not prime" && exit
+done
+echo "Prime"
+
+Convert Fahrenheit to Celsius
+
+read -p "fehrenheit: " f
+c=$((($f-32)*5/9))
+echo "celsius: $c"
+
+
+
+
+

@@ -1,0 +1,6 @@
+read -p "Enter directory:" dir
+if [ ! -d $dir ]; then
+  echo "Does not exist"
+  exit 1
+fi
+echo "Directory exists"

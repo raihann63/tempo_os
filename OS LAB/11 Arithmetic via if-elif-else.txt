@@ -1,0 +1,14 @@
+read -p "Enter num1:" num1
+read -p "Enter num2:" num2
+read -p "Enter operand:" op
+if [ $op == + ]; then
+  echo "$num1 + $num2 = $((num1+num2))"
+elif [ $op == - ]; then
+  echo "$num1 - $num2 = $((num1-num2))"
+elif [ $op == * ]; then
+  echo "$num1 * $num2 = $((num1*num2))"
+elif [ $op == / ]; then
+  echo "$num1 / $num2 = $((num1/num2))"
+else
+  echo "Operator not listed"
+fi
